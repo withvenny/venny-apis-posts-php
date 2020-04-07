@@ -240,6 +240,7 @@
             if(isset($request['deleted'])){$columns.="post_deleted,";}	
             if(isset($request['access'])){$columns.="post_access,";}	
             if(isset($request['host'])){$columns.="post_host,";}
+            if(isset($request['parent'])){$columns.="post_parent,";}
             if(isset($request['profile'])){$columns.="profile_id,";}
 
             $columns.= "app_id,";
@@ -257,6 +258,7 @@
             if(isset($request['deleted'])){$values.=":post_deleted,";}
             if(isset($request['access'])){$values.=":post_access,";}
             if(isset($request['host'])){$values.=":post_host,";}
+            if(isset($request['parent'])){$values.=":post_parent,";}
             if(isset($request['profile'])){$values.=":profile_id,";}
 
             $values.= ":app_id,";
@@ -285,6 +287,7 @@
             if(isset($request['deleted'])){$statement->bindValue('post_deleted',$request['deleted']);}
             if(isset($request['access'])){$statement->bindValue('post_access',$request['access']);}
             if(isset($request['host'])){$statement->bindValue('post_host',$request['host']);}
+            if(isset($request['parent'])){$statement->bindValue('post_parent',$request['parent']);}
             if(isset($request['profile'])){$statement->bindValue('profile_id',$request['profile']);}
  
             $statement->bindValue(':app_id', $request['app']);
@@ -334,6 +337,7 @@
                 post_deleted,		
                 post_access,		
                 post_host,
+                post_parent,
                 profile_ID,
                 app_ID
 
@@ -392,6 +396,7 @@
                     if(isset($request['deleted'])){$refinements.="post_deleted"." = "."'".$request['deleted']."' AND ";}		
                     if(isset($request['access'])){$refinements.="post_access"." = "."'".$request['access']."' AND ";}		
                     if(isset($request['host'])){$refinements.="post_host"." = "."'".$request['host']."' AND ";}		
+                    if(isset($request['parent'])){$refinements.="post_parent"." = "."'".$request['parent']."' AND ";}		
 
                     //echo $conditions . 'conditions1<br/>';
                     //echo $refinements . 'refinements1<br/>';
@@ -450,6 +455,7 @@
                             'deleted' => $row['post_deleted'],
                             'access' => $row['post_access'],
                             'host' => $row['post_host'],
+                            'parent' => $row['post_parent'],
                             'profile' => $row['profile_id']
 
                         ];
@@ -519,6 +525,7 @@
             if(isset($request['deleted'])){$set.= " post_deleted = :post_deleted ";}
             if(isset($request['access'])){$set.= " post_access = :post_access ";}
             //if(isset($request['host'])){$set.= " post_host = :post_host ";}
+            //if(isset($request['parent'])){$set.= " post_parent = :post_parent ";}
             //
             $set = str_replace('  ',',',$set);
 
@@ -545,6 +552,7 @@
             if(isset($request['deleted'])){$statement->bindValue(':post_deleted', $request['deleted']);}
             if(isset($request['access'])){$statement->bindValue(':post_access', $request['access']);}
             //if(isset($request['host'])){$statement->bindValue(':post_host', $request['host']);}
+            //if(isset($request['parent'])){$statement->bindValue(':post_parent', $request['parent']);}
             //if(isset($request['profile_id'])){$statement->bindValue(':profile_id', $request['profile_id']);}
             //if(isset($request['app_id'])){$statement->bindValue(':app_id', $request['app_id']);}
 

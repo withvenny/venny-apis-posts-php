@@ -25,6 +25,7 @@
     if(isset($_REQUEST['deleted'])){$request['deleted'] = clean($_REQUEST['deleted']);}
     if(isset($_REQUEST['access'])){$request['access'] = clean($_REQUEST['access']);}
     if(isset($_REQUEST['host'])){$request['host'] = clean($_REQUEST['host']);}
+    if(isset($_REQUEST['parent'])){$request['parent'] = clean($_REQUEST['parent']);}
     if(isset($_REQUEST['profile'])){$request['profile'] = clean($_REQUEST['profile']);}
 
     //
