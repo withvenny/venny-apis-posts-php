@@ -34,7 +34,7 @@
                 $tag = new Tag($pdo);
             
                 // insert a stock into the stocks table
-                $id = $tag->inserttag($request);
+                $id = $tag->insertTag($request);
 
                 $request['id'] = $id;
 
