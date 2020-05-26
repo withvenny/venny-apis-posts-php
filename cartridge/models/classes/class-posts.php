@@ -339,7 +339,8 @@
                 post_host,
                 post_parent,
                 profile_ID,
-                app_ID
+                app_ID,
+                time_finished
 
                 ";
 
@@ -456,7 +457,9 @@
                             'access' => $row['post_access'],
                             'host' => $row['post_host'],
                             'parent' => $row['post_parent'],
-                            'profile' => $row['profile_id']
+                            'profile' => $row['profile_id'],
+                            'app' => $row['app_id'],
+                            'when' => $row['time_finished']
 
                         ];
 
@@ -705,7 +708,8 @@
                 tag_label,
                 tag_object,
                 profile_ID,
-                app_ID
+                app_ID,
+                time_finished
 
                 ";
 
