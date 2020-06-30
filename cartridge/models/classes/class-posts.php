@@ -521,7 +521,7 @@
 
             // UPDATE OBJECT - SET
             // SKIP as ID won't be getting UPDATED
-            //if(isset($request['attributes'])){$set.= " post_attributes = :post_attributes ";}
+            if(isset($request['attributes'])){$set.= " post_attributes = :post_attributes ";}
             if(isset($request['body'])){$set.= " post_body = :post_body ";}
             if(isset($request['images'])){$set.= " post_images = :post_images ";}
             if(isset($request['closed'])){$set.= " post_closed = :post_closed ";}
@@ -548,7 +548,7 @@
     
             // UPDATE OBJECT - BIND VALUES
             //if(isset($request['id'])){$statement->bindValue(':post_id', $request['id']);}
-            //if(isset($request['attributes'])){$statement->bindValue(':post_attributes', $request['attributes']);}
+            if(isset($request['attributes'])){$statement->bindValue(':post_attributes', $request['attributes']);}
             if(isset($request['body'])){$statement->bindValue(':post_body', $request['body']);}
             if(isset($request['images'])){$statement->bindValue(':post_images', $request['images']);}
             if(isset($request['closed'])){$statement->bindValue(':post_closed', $request['closed']);}
