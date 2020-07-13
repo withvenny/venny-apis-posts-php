@@ -28,6 +28,11 @@
     if(isset($_REQUEST['parent'])){$request['parent'] = clean($_REQUEST['parent']);}
     if(isset($_REQUEST['profile'])){$request['profile'] = clean($_REQUEST['profile']);}
 
+    if(isset($_REQUEST['address'])){$request['address'] = clean($_REQUEST['address']);}
+    if(isset($_REQUEST['category'])){$request['category'] = clean($_REQUEST['category']);}
+    if(isset($_REQUEST['name'])){$request['name'] = clean($_REQUEST['name']);}
+    if(isset($_REQUEST['service_type'])){$request['service_type'] = clean($_REQUEST['service_type']);}
+
     //
     switch ($_SERVER['REQUEST_METHOD']) {
 

@@ -399,8 +399,14 @@
                     if(isset($request['host'])){$refinements.="post_host"." = "."'".$request['host']."' AND ";}		
                     if(isset($request['parent'])){$refinements.="post_parent"." = "."'".$request['parent']."' AND ";}		
 
-                    //echo $conditions . 'conditions1<br/>';
-                    //echo $refinements . 'refinements1<br/>';
+                    if(isset($request['address'])){$refinements.="post_attributes->'details'->>'address' ilike '%" . $request['address'] . "%' AND ";}
+                    if(isset($request['category'])){$refinements.="post_attributes->'details'->>'category' ilike '%" . $request['category'] . "%' AND ";}
+                    if(isset($request['name'])){$refinements.="post_attributes->'details'->>'name' ilike '%" . $request['name'] . "%' AND ";}
+                    if(isset($request['service_type'])){$refinements.="post_attributes->'details'->>'service_type' ilike '%" . $request['service_type'] . "%' AND ";}
+
+                    echo $conditions . 'conditions1<br/>';
+                    echo $refinements . 'refinements1<br/>';
+                    exit;
                     
                     $conditions.= " WHERE ";
                     $conditions.= $refinements;
