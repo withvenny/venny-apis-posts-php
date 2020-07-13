@@ -404,9 +404,9 @@
                     if(isset($request['name'])){$refinements.="post_attributes->'details'->>'name' ilike '%" . $request['name'] . "%' AND ";}
                     if(isset($request['service_type'])){$refinements.="post_attributes->'details'->>'service_type' ilike '%" . $request['service_type'] . "%' AND ";}
 
-                    echo $conditions . 'conditions1<br/>';
-                    echo $refinements . 'refinements1<br/>';
-                    exit;
+                    //echo $conditions . 'conditions1<br/>';
+                    //echo $refinements . 'refinements1<br/>';
+                    //exit;
                     
                     $conditions.= " WHERE ";
                     $conditions.= $refinements;
@@ -424,7 +424,7 @@
                     //echo $conditions . 'conditions2<br/>';
                     //echo $refinements . 'refinements2<br/>';
 
-                    //echo $sql; exit;
+                    echo $sql; exit;
                     
                     //
                     $statement = $this->pdo->prepare($sql);
